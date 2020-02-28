@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <button @click="showModal = true">toggle</button>
+    <my-modal v-show="showModal"  @go="go" @closeModal="closeModal">
+      <template #modalMessage="id">
+        <p>{{id.data}}Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, itaque fugiat ut illum soluta autem reprehenderit tempora at ex eius?</p>
+      </template>
+    </my-modal>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import MyModal from "./components/MyModal";
 export default {
-  name: 'App',
+  data() {
+    return {
+      showModal: false
+    };
+  },
+  name: "App",
+  methods: {
+    closeModal() {
+      this.showModal = false;
+    },
+    go() {
+      this.showModal = false;
+      console.log("自定义事件");
+    }
+  },
   components: {
-    HelloWorld
+    MyModal
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

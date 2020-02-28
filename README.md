@@ -1,24 +1,4 @@
 # componentization-modal
-
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 弹出框组件
+###  引入之后直接使用`<my-modal></my-modal>`
+### 可传`title`以及在标签使用`template`传入`modal`的`body`消息
